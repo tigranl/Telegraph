@@ -1,12 +1,15 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-var Scheme = mongoose.Schema,
-    ObjectId = Schema.ObjectId;
+let Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId
 
-var Post = new Schema({
+let PostSchema = new Schema({
     postId       : ObjectId,
     title        : String,
     name         : {type: String, max: 100},
     story        : String,
     date         : {type: Date, default: Date.now}
 })
+
+let Post = mongoose.model('Post', PostSchema)
+module.exports = Post
