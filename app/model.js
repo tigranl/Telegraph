@@ -8,8 +8,9 @@ let PostSchema = new Schema({
     title        : String,
     name         : {type: String, max: 100},
     story        : String,
-    date         : {type: Date, default: Date.now}
-})
+    date         : {type: Date, default: Date.now},
+    url          : String
+});
 
 let Post = mongoose.model('Post', PostSchema)
 module.exports = Post
